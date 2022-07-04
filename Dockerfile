@@ -61,17 +61,17 @@ RUN cd $HOME/work;\
                 plotly==3.10.0 \
                 flask; \
     python -m sos_notebook.install; \
-    git clone --single-branch -b blog_afi https://github.com/qMRLab/t1_notebooks.git;  \
-    cd t1_notebooks;\
+    git clone --single-branch -b main https://github.com/jvelazquez-reyes/simEPG.git;  \
+    cd simEPG;\
     git clone https://github.com/neuropoly/qMRLab.git;   \
     cd qMRLab; \
     git checkout 05e1e62c7460fbf9c62c86c1ce6b76f98ed29121; \
     cd ..; \
-    chmod -R 777 $HOME/work/t1_notebooks; \
+    chmod -R 777 $HOME/work/simEPG; \
     octave --eval "cd qMRLab; \
                       startup; \
                       pkg list;"
 
-WORKDIR $HOME/work/t1_notebooks
+WORKDIR $HOME/work/simEPG
 
 USER $NB_UID
